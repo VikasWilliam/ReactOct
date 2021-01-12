@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header=()=>{
     return(<div>
-        <h3>Header Section</h3>
+        <h1>Home Page</h1>
         <hr/>
     </div>)
     
