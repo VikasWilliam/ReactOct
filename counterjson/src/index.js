@@ -1,38 +1,36 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import App2 from './component/form';
 
 
-class Demo extends Component {
-  constructor() {
-    super();
 
-    this.state = {
-      counter: 0,
-    }
-
-   
-  }
-
-  onClickHandler=()=>{
-    this.setState({
-      counter: this.state.counter+1
-    })
-  }
+const Demo =()=> {
   
+const[todos,setTodos]= useState([]);
+const[input,setInput]= useState('');  
 
-  render() {
+const addHandler=(event)=>{
+  event.preventDefault();
+  setTodos([...todos,input]);
+  setInput('');
+}
+  
+console.log(input);
     return (
       <div>
         <center>
-          <button onClick={this.onClickHandler} className="btn btn-primary">Click Me!</button>
-          <p>{this.state.counter}</p>
-          <App2/>
+          <h3>Hello clever Programmer 👍</h3>
+          
+          <input value={input} onChange={event=>setInput(event.target.value)}/><br/><br></br>
+          <button className="btn btn-primary" onClick={addHandler}>Click me!</button>
+          <ul>{todos.map(a=>(
+            <li>{a}</li>
+          ))}</ul>
+         
         </center>
       </div>
 
     )
   }
-}
+
 
 ReactDOM.render(<Demo/>,document.getElementById("root"));
