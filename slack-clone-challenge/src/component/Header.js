@@ -43,7 +43,7 @@ background :#350d36;
 color: white;
 display: flex;
 align-items: center;
-justify-content: space-between;
+justify-content: center;
 
 
 `
@@ -51,12 +51,16 @@ justify-content: space-between;
 const Main = styled.div`
 
 display: flex;
+margin-right:16px;
+margin-left:30px;
 
 `
 
 const SearchContainer = styled.div`
 
 min-width: 400px;
+margin-left:16px;
+margin-right:16px;
 
 `
 
@@ -87,7 +91,8 @@ const UserContainer = styled.div`
 display: flex;
 align-items: center;
 padding-right:16px;
-
+position: absolute;
+right:0;
 
 `
 
